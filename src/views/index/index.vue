@@ -1,9 +1,13 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import viewport_animation from '@/components/viewport_animation.vue';
+</script>
 
 <template>
     <div class="index_container">
-        index_container
-        <ElButton type="primary">Primary</ElButton>
+        <viewport_animation>
+            index_container
+            <ElButton type="primary">Primary</ElButton>
+        </viewport_animation>
     </div>
 </template>
 
