@@ -3,7 +3,7 @@ import viewport_animation from '@/components/viewport_animation.vue';
 </script>
 
 <template>
-    <div class="index_container">
+    <div class="index_container pt-[20px]">
         <viewport_animation>
             index_container
             <ElButton type="primary">Primary</ElButton>
