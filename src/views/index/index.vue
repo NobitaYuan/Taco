@@ -1,9 +1,10 @@
 <script lang="ts" setup>
-import viewport_animation from '@/components/viewport_animation.vue';
-import { ElUpload, ElCard, type UploadFile, type UploadFiles } from 'element-plus';
-const onUpload = (uploadFile: UploadFile, uploadFiles: UploadFiles) => {
-    console.log(uploadFile, uploadFiles);
-};
+import viewport_animation from '@/components/viewport_animation.vue'
+import { UploadFile, UploadFiles } from 'element-plus'
+
+const onUpload = (file: UploadFile, uploadFiles: UploadFiles) => {
+    console.log(file, uploadFiles)
+}
 </script>
 
 <template>
