@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import viewport_animation from '@/components/viewport_animation.vue'
+import { useDarkMode } from '@/hooks'
 import { UploadFile, UploadFiles } from 'element-plus'
 import { Book, Rendition } from 'epubjs'
 import Navigation, { NavItem } from 'epubjs/types/navigation'
@@ -16,6 +17,10 @@ const bookName = ref('')
 const cover = ref('')
 const toc = ref<NavItem[]>([])
 
+//
+const { isDark } = useDarkMode()
+
+//
 const onUpload = (file: UploadFile, uploadFiles: UploadFiles) => {
     if (window.FileReader) {
         bookName.value = file.name.split('.')[0]
@@ -67,10 +72,18 @@ const onUpload = (file: UploadFile, uploadFiles: UploadFiles) => {
                     console.log('toc', t)
                     toc.value = t.toc
                 })
+
+                rendition.themes.register('light', { ['body.light']: { color: '#0f0f27' } })
+                rendition.themes.register('dark', { ['body.dark']: { color: '#e5eaf3' } })
+                // rendition.themes.select(isDark.value ? 'dark' : 'light')
             }
         }
     }
 }
+
+watch(isDark, (newVal) => {
+    rendition?.themes.select(newVal ? 'dark' : 'light')
+})
 
 const nextPage = () => {
     rendition?.next()
