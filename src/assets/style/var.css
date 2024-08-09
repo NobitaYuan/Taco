@@ -1,8 +1,14 @@
 /* 普通模式 */
 :root {
     --background-gray-50: #efe2c0;
+    --safe-width: 1200px;
+    --nav-height: 50px;
+    --text-color: #0f0f27;
 }
 
 /* 黑夜模式 */
 :root.dark {
+    --safe-width: 1200px;
+    --nav-height: 50px;
+    --text-color: #e5eaf3;
 }
