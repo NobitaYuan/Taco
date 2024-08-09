@@ -4,6 +4,9 @@ import { UploadFile, UploadFiles } from 'element-plus'
 import { Book, Rendition } from 'epubjs'
 import Navigation, { NavItem } from 'epubjs/types/navigation'
 import { onMounted, ref } from 'vue'
+
+// NOTE:文档链接：http://epubjs.org/documentation/0.3/
+
 const bookUrl = 'https://s3.amazonaws.com/moby-dick/OPS/package.opf'
 
 const book: Book = new Book()
@@ -40,13 +43,19 @@ const onUpload = (file: UploadFile, uploadFiles: UploadFiles) => {
                         'mix-blend-mode': 'multiply',
                     },
                 })
-
                 // 高亮
                 rendition.on('selected', function (cfiRange) {
                     book.getRange(cfiRange).then(function (range) {
                         console.log('cfiRange', cfiRange, 'range', range.toString())
                     })
                 })
+                rendition.on('selected', function (cfiRange, contents) {
+                    rendition.annotations.highlight(cfiRange, {}, (e) => {
+                        console.log('highlight clicked', e.target)
+                    })
+                    contents.window.getSelection().removeAllRanges()
+                })
+
                 // 封面
                 book.coverUrl().then((res) => {
                     cover.value = res || ''
@@ -89,7 +98,7 @@ const clickToc = (item: NavItem) => {
 
 <template>
     <div class="index_container">
-        <div class="toc">
+        <div class="toc" v-if="isBookRendered">
             <div class="toc_label mb-[4px]">目录</div>
             <div class="toc_item" v-for="item in toc" :key="item.id">
                 <div class="toc_label" @click="clickToc(item)">{{ item.label }}</div>
