@@ -48,6 +48,7 @@
         "unplugin-vue-components": "^0.27.3",
         "vite": "^5.3.1",
         "vite-plugin-vue-devtools": "1.0.0-rc.5",
+        "vue-eslint-parser": "^9.4.3",
         "vue-tsc": "^2.0.21"
     }
 }

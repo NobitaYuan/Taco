@@ -3,7 +3,7 @@ import viewport_animation from '@/components/viewport_animation.vue'
 import { useDarkMode } from '@/hooks'
 import { UploadFile, UploadFiles } from 'element-plus'
 import { Book, Rendition } from 'epubjs'
-import Navigation, { NavItem } from 'epubjs/types/navigation'
+import { NavItem } from 'epubjs/types/navigation'
 import { onMounted, ref } from 'vue'
 
 // NOTE:文档链接：http://epubjs.org/documentation/0.3/

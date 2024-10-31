@@ -88,6 +88,9 @@ devDependencies:
     vite-plugin-vue-devtools:
         specifier: 1.0.0-rc.5
         version: 1.0.0-rc.5(pug@3.0.3)(vite@5.3.1)
+    vue-eslint-parser:
+        specifier: ^9.4.3
+        version: 9.4.3(eslint@9.5.0)
     vue-tsc:
         specifier: ^2.0.21
         version: 2.0.21(typescript@5.2.2)
@@ -772,7 +775,7 @@ packages:
         engines: { node: ^18.18.0 || ^20.9.0 || >=21.1.0 }
         dependencies:
             '@eslint/object-schema': 2.1.4
-            debug: 4.3.5
+            debug: 4.3.6
             minimatch: 3.1.2
         transitivePeerDependencies:
             - supports-color
@@ -783,7 +786,7 @@ packages:
         engines: { node: ^18.18.0 || ^20.9.0 || >=21.1.0 }
         dependencies:
             ajv: 6.12.6
-            debug: 4.3.5
+            debug: 4.3.6
             espree: 10.1.0
             globals: 14.0.0
             ignore: 5.3.1
@@ -1169,7 +1172,7 @@ packages:
             '@typescript-eslint/types': 7.14.1
             '@typescript-eslint/typescript-estree': 7.14.1(typescript@5.2.2)
             '@typescript-eslint/visitor-keys': 7.14.1
-            debug: 4.3.5
+            debug: 4.3.6
             eslint: 9.5.0
             typescript: 5.2.2
         transitivePeerDependencies:
@@ -4578,7 +4581,7 @@ packages:
         dependencies:
             '@antfu/utils': 0.7.10
             '@rollup/pluginutils': 5.1.0
-            debug: 4.3.5
+            debug: 4.3.6
             error-stack-parser-es: 0.1.4
             fs-extra: 11.2.0
             open: 9.1.0
@@ -4696,7 +4699,7 @@ packages:
         peerDependencies:
             eslint: '>=6.0.0'
         dependencies:
-            debug: 4.3.5
+            debug: 4.3.6
             eslint: 9.5.0
             eslint-scope: 7.2.2
             eslint-visitor-keys: 3.4.3
